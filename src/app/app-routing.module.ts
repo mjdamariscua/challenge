@@ -26,6 +26,11 @@ const routes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
+  {
+    path: 'home/:filter',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
