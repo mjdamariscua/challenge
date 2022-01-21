@@ -16,19 +16,19 @@
       </button>
 
       <div
-        class="collapse navbar-collapse"
+        class="collapse navbar-collapse text-white"
         id="navbarNav"
         [ngbCollapse]="isCollapsed"
       >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a routerLink="/" class="nav-link">Home</a>
+            <a routerLink="/" class="nav-link text-white">Home</a>
           </li>
           <li class="nav-item">
-            <a routerLink="home/movie" class="nav-link">Peliculas</a>
+            <a routerLink="home/movie" class="nav-link text-white">Peliculas</a>
           </li>
           <li class="nav-item">
-            <a routerLink="home/serie" class="nav-link">Series</a>
+            <a routerLink="home/serie" class="nav-link text-white">Series</a>
           </li>
         </ul>
 
@@ -40,7 +40,7 @@
           >
             <button
               id="qsLoginBtn"
-              class="btn btn-primary btn-margin"
+              class="btn btn-primary btn-margin text-white"
               (click)="loginWithRedirect()"
             >
               Log in
@@ -63,14 +63,14 @@
               <!-- Profile image should be set to the profile picture from the id token -->
               <img
                 [src]="user.picture"
-                alt="Profile picture"
-                class="nav-user-profile rounded-circle"
+                alt="Profile picture "
+                class="nav-user-profile rounded-circle text-white"
                 style="width: 75px;"
               />
             </a>
-            <div class="dropdown-menu dropdown-menu-left" ngbDropdownMenu>
+            <div class="dropdown-menu dropdown-menu-left text-white" ngbDropdownMenu>
               <!-- Show the user's full name from the id token here -->
-              <div class="dropdown-header">
+              <div class="dropdown-header ">
                 {{ user.name }}
               </div>
               <a routerLink="/profile" class="dropdown-item dropdown-profile">

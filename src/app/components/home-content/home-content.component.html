@@ -41,6 +41,23 @@
           <ng-container *ngIf="content[(i*4)+j]">
             <div class="movie-item col-lg-3 col-md-3 col-sm-3 pb-2 text-center">
               <img [src]="content[(i*4)+j].images['Poster Art'].url" />
+              <div class="overlay">
+                <div class="text">
+                  <div class="pb-1 text-left">
+                    {{ content[i+j].releaseYear + ' • ' + content[i+j].title }}
+                  </div>
+                  <div class="fs-12 pb-2 text-left">
+                    {{ content[i+j].description }}
+                  </div>
+                  <div class="fs-12 text-capitalize pb-2 text-left">
+                    {{ content[i+j].programType }}
+                  </div>
+                  <div class="btn-play">
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="far fa-play-circle pr-2"></i>Reproducir</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </ng-container>
         </ng-container>
@@ -51,8 +68,8 @@
   <ng-container *ngIf="content.length===0 && !loading">
 
     <div class="row pt-3">
-      <div class="col-12 text-center">
-        No se encontraron coincidencias :'(
+      <div class="col-12 text-center pb-6">
+        <h3>¡No he encontrado coincidencias!</h3><i class="far fa-frown fa-7x"></i>
       </div>
     </div>
 
