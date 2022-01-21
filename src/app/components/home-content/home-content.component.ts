@@ -61,19 +61,36 @@ export class HomeContentComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy() {
-    if (!isNullOrUndefined(this.paramsSuscriptor)) {
-      this.paramsSuscriptor.unsubscribe();
-    }
+  
+  execute_order(prop, asc) {
+    this.content = this.content.sort((a, b) => {
+      if (asc) {
+        if (typeof a[prop] === 'string' || a[prop] instanceof String) {
+          return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+        } else {
+          return a[prop] - b[prop];
+        }
+      } else {
+        if (typeof a[prop] === 'string' || a[prop] instanceof String) {
+          return  (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+        } else {
+          return b[prop] - a[prop];
+        }
+      }
+    });
   }
 
   counter(length: number): Array<any> {
     if (Math.ceil(length) >= 0) {
-      console.log(Math.trunc(length));
       return new Array(Math.ceil(length));
     }else {
       return new Array();
     }
   }
 
+  ngOnDestroy() {
+    if (!isNullOrUndefined(this.paramsSuscriptor)) {
+      this.paramsSuscriptor.unsubscribe();
+    }
+  }
 }

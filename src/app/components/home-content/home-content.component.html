@@ -1,29 +1,60 @@
-<div class="row pt-4 pb-3">
-  <div class="col-12">
-    <input class="form-control" id="search-movie" type="text" placeholder="Buscar.." (keyup)="search_movies($event)">
-  </div>
-</div>
+<div class="container">
 
-<ng-container *ngIf="content.length>0">
-  <ng-container *ngFor="let rows of counter(content.length/4); let i = index">
-    <div class="row pb-3 pt-2">
-      <ng-container *ngFor="let number of counter(4); let j = index">
-        <ng-container *ngIf="content[(i*4)+j]">
-          <div class="movie-item col-lg-3 col-md-3 col-sm-3 pb-2 text-center">
-            <img [src]="content[(i*4)+j].images['Poster Art'].url" />
-          </div>
-        </ng-container>
-      </ng-container>
-    </div>
-  </ng-container>
-</ng-container>
-
-<ng-container *ngIf="content.length===0 && !loading">
 
   <div class="row pt-3">
-    <div class="col-12 text-center">
-      No se encontraron coincidencias :'(
+    <div class="col-12">
+      <div class="dropdownpt-3 pull-left">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Ordenar
+        </button>
+        <ul class="dropdown-menu fs-12" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" href="#" (click)="execute_order('releaseYear', false)">Año DESC</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="execute_order('releaseYear', true)">Año ASC</a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="execute_order('title', false)">Título DESC</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="execute_order('title', true)">Título ASC</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-4 pb-3">
+    <div class="col-12">
+      <input class="form-control" id="search-movie" type="text" placeholder="Buscar.." (keyup)="search_movies($event)">
     </div>
   </div>
 
-</ng-container>
+  <ng-container *ngIf="content.length>0">
+    <ng-container *ngFor="let rows of counter(content.length/4); let i = index">
+      <div class="row pb-3 pt-2">
+        <ng-container *ngFor="let number of counter(4); let j = index">
+          <ng-container *ngIf="content[(i*4)+j]">
+            <div class="movie-item col-lg-3 col-md-3 col-sm-3 pb-2 text-center">
+              <img [src]="content[(i*4)+j].images['Poster Art'].url" />
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="content.length===0 && !loading">
+
+    <div class="row pt-3">
+      <div class="col-12 text-center">
+        No se encontraron coincidencias :'(
+      </div>
+    </div>
+
+  </ng-container>
+</div>
