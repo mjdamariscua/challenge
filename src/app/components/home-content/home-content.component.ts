@@ -52,6 +52,15 @@ export class HomeContentComponent implements OnInit, OnDestroy {
     this.loading = false;
   }
 
+  search_movies(input) {
+    const val = !isNullOrUndefined(input.target.value) ? String(input.target.value).toLowerCase() : null;
+    if (!isNullOrUndefined(val)) {
+      this.execute_filter(val);
+    } else {
+      this.content = this.contentBase;
+    }
+  }
+
   ngOnDestroy() {
     if (!isNullOrUndefined(this.paramsSuscriptor)) {
       this.paramsSuscriptor.unsubscribe();
@@ -59,8 +68,9 @@ export class HomeContentComponent implements OnInit, OnDestroy {
   }
 
   counter(length: number): Array<any> {
-    if (Math.trunc(length) >= 0) {
-      return new Array(Math.trunc(length));
+    if (Math.ceil(length) >= 0) {
+      console.log(Math.trunc(length));
+      return new Array(Math.ceil(length));
     }else {
       return new Array();
     }
