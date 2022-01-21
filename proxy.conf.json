@@ -1,0 +1,8 @@
+{
+    "/movies.json": {
+      "target": "https://assets-aivo.s3.amazonaws.com/",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

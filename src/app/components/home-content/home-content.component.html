@@ -1,0 +1,25 @@
+<ng-container *ngIf="content.length>0">
+    <ng-container *ngFor="let rows of counter(content.length/4); let i = index">
+      <div class="row pb-3 pt-2">
+        <ng-container *ngFor="let number of counter(4); let j = index">
+
+          <div class="movie-item col-lg-3 col-md-3 col-sm-3 pb-2 text-center">
+            <img [src]="content[(i*4)+j].images['Poster Art'].url" />
+            
+            
+          </div>
+
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="content.length===0">
+
+    <div class="row pt-3">
+      <div class="col-12 text-center">
+        No se encontraron coincidencias :'(
+      </div>
+    </div>
+
+  </ng-container>

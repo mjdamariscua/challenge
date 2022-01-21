@@ -63,7 +63,8 @@
           "options": {
             "browserTarget": "login-demo:build",
             "sslKey": "src/certs/ca.key",
-            "sslCert": "src/certs/ca.crt"
+            "sslCert": "src/certs/ca.crt",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {

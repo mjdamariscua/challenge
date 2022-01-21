@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.icon-subtitle {
+    color: #70757a;
+    font: 14px/20px arial,sans-serif;
+    letter-spacing: .2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 10%;
+    left: 12px;
+    right: 12px;
+}
+
+.fs-12 {
+    font-size: 0.7rem
+}
+
+.movie-item > img {
+    border-radius: 8px;
+    width: 100%;
+}
