@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# challenge
-Challenge Streaming AIVO
-=======
 # Auth0 Angular SDK sample
 
 This sample app demonstrates the integration of the [Auth0 Angular SDK](https://github.com/auth0/auth0-angular) into an Angular application created using the Angular CLI. This sample is a companion to the [Auth0 Angular SDK Quickstart](https://auth0.com/docs/quickstart/spa/angular).
@@ -85,4 +81,3 @@ If you have found a bug or if you have a feature request, please report them at 
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](../LICENSE) file for more info.
->>>>>>> refs/remotes/origin/master

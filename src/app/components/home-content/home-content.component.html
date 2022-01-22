@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container pb-3">
 
-
+  <!-- order-->
   <div class="row pt-3">
     <div class="col-12">
       <div class="dropdownpt-3 pull-left">
@@ -28,12 +28,15 @@
       </div>
     </div>
   </div>
+
+  <!-- global filter-->
   <div class="row pt-4 pb-3">
     <div class="col-12">
       <input class="form-control" id="search-movie" type="text" placeholder="Buscar.." (keyup)="search_movies($event)">
     </div>
   </div>
 
+  <!-- content-->
   <ng-container *ngIf="content.length>0">
     <ng-container *ngFor="let rows of counter(content.length/4); let i = index">
       <div class="row pb-3 pt-2">
@@ -65,13 +68,21 @@
     </ng-container>
   </ng-container>
 
+  <!-- not found -->
   <ng-container *ngIf="content.length===0 && !loading">
-
     <div class="row pt-3">
       <div class="col-12 text-center pb-6">
         <h3>¡No he encontrado coincidencias!</h3><i class="far fa-frown fa-7x"></i>
       </div>
     </div>
+  </ng-container>
 
+  <!-- loading -->
+  <ng-container *ngIf="loading">
+    <div class="row pt-3">
+      <div class="col-12 text-center pb-6">
+        <app-loading></app-loading>
+      </div>
+    </div>
   </ng-container>
 </div>

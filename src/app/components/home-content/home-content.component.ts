@@ -37,6 +37,7 @@ export class HomeContentComponent implements OnInit, OnDestroy {
   }
 
   execute_filter(val) {
+    this.loading = true;
     this.content = this.contentBase.filter(function (x) {
       let filter = false;
       for (const clave in x) {
@@ -53,16 +54,19 @@ export class HomeContentComponent implements OnInit, OnDestroy {
   }
 
   search_movies(input) {
+    this.loading = true;
     const val = !isNullOrUndefined(input.target.value) ? String(input.target.value).toLowerCase() : null;
     if (!isNullOrUndefined(val)) {
       this.execute_filter(val);
     } else {
+      this.loading = false;
       this.content = this.contentBase;
     }
   }
 
   
   execute_order(prop, asc) {
+    this.loading = true;
     this.content = this.content.sort((a, b) => {
       if (asc) {
         if (typeof a[prop] === 'string' || a[prop] instanceof String) {
@@ -78,6 +82,7 @@ export class HomeContentComponent implements OnInit, OnDestroy {
         }
       }
     });
+    this.loading = false;
   }
 
   counter(length: number): Array<any> {
