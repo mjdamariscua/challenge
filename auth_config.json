@@ -1,0 +1,10 @@
+{
+    "domain": "dev-ujdagnbl.us.auth0.com",
+    "clientId": "GHIympGiNI3DsBZUv3zE8qlfpVC4SMUv",
+    "audience": "https://dev-ujdagnbl.us.auth0.com/api/v2/",
+    "apiUri": "http://localhost:3001",
+    "appUri": "https://localhost:4200",
+    "errorPath": "/error"
+}
+
+  
